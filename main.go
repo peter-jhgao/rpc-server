@@ -6,12 +6,17 @@ import (
 	"net/http"
 	"net/rpc"
 
-	"github.com/techwo/rpc-server/calculator"
+	"github.com/techwo/rpc-server/service"
 )
 
 func main() {
-	s := new(calculator.Service)
-	rpc.Register(s)
+
+	s := new(service.Calculator)
+	err := rpc.Register(s)
+	if err != nil {
+		log.Fatal("Service registration error:", err)
+	}
+
 	rpc.HandleHTTP()
 
 	l, err := net.Listen("tcp", "localhost:8767")
