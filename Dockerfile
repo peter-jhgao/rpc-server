@@ -6,4 +6,6 @@ ADD . ./
 
 RUN go build
 
+EXPOSE 8767
+
 CMD ["./src"]
