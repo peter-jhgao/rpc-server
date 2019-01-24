@@ -19,7 +19,7 @@ func main() {
 
 	rpc.HandleHTTP()
 
-	l, err := net.Listen("tcp", "localhost:8767")
+	l, err := net.Listen("tcp", ":8767")
 	if err != nil {
 		log.Fatal("Listen error:", err)
 	}
