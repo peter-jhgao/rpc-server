@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"net/rpc"
 
-	"github.com/techwo/rpc-server/service"
+	"service"
 )
 
 func main() {
